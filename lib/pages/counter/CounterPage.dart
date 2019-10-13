@@ -12,10 +12,8 @@ class CounterPage extends StatelessWidget {
 
     return BlocBuilder<CounterBloc, int>(
         builder: (context, count) => CounterView(
-          counter: count,
-          onCounterIncremented: () => counterBloc.dispatch(CounterEvent.increment)
-        )
-    );
+            counter: count,
+            onCounterIncremented: () =>
+                counterBloc.dispatch(CounterEvent.increment)));
   }
-
 }

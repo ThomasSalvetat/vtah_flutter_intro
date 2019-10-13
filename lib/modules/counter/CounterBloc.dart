@@ -1,5 +1,5 @@
-import 'package:vtah_flutter_intro/modules/counter/CounterEvent.dart';
 import 'package:bloc/bloc.dart';
+import 'package:vtah_flutter_intro/modules/counter/CounterEvent.dart';
 
 class CounterBloc extends Bloc<CounterEvent, int> {
   @override
@@ -7,7 +7,7 @@ class CounterBloc extends Bloc<CounterEvent, int> {
 
   @override
   Stream<int> mapEventToState(CounterEvent event) async* {
-    switch(event) {
+    switch (event) {
       case CounterEvent.increment:
         yield currentState + 1;
         break;
@@ -16,6 +16,4 @@ class CounterBloc extends Bloc<CounterEvent, int> {
         break;
     }
   }
-
-
 }

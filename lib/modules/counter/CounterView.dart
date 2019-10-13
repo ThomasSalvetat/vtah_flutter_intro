@@ -15,17 +15,16 @@ class CounterView extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-                  '$counter',
-                  style: Theme.of(context).textTheme.display1,
-                ),
-        ]
-        ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'You have pushed the button this many times:',
+              ),
+              Text(
+                '$counter',
+                style: Theme.of(context).textTheme.display1,
+              ),
+            ]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onCounterIncremented,
@@ -34,5 +33,4 @@ class CounterView extends StatelessWidget {
       ),
     );
   }
-
 }

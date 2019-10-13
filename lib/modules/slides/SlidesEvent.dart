@@ -1,0 +1,1 @@
+enum SlidesEvent { previous, forward }
