@@ -1,0 +1,22 @@
+PODS:
+  - example_plugin (0.0.3):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+
+DEPENDENCIES:
+  - example_plugin (from `Flutter/ephemeral/.symlinks/plugins/example_plugin/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral/.symlinks/flutter/darwin-x64`)
+
+EXTERNAL SOURCES:
+  example_plugin:
+    :path: Flutter/ephemeral/.symlinks/plugins/example_plugin/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral/.symlinks/flutter/darwin-x64
+
+SPEC CHECKSUMS:
+  example_plugin: 47735b684ede2e4aeb69a821377704af3295c19c
+  FlutterMacOS: 15bea8a44d2fa024068daa0140371c020b4b6ff9
+
+PODFILE CHECKSUM: f1f125ca80df00541fd3717ba2927f4dff97d9b3
+
+COCOAPODS: 1.7.5
