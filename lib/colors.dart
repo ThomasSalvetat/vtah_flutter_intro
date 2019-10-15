@@ -10,9 +10,13 @@ class ColorsTheme extends InheritedWidget {
       Color primary = const Color.fromARGB(255, 0, 58, 112),
       Color secondary = const Color.fromARGB(255, 84, 197, 248),
       Color warn = const Color.fromARGB(255, 244, 67, 54),
+      Color textBackground = const Color.fromARGB(255, 242, 242, 242),
       this.child})
-      : data =
-            ColorsThemeData(primary: primary, secondary: secondary, warn: warn);
+      : data = ColorsThemeData(
+            primary: primary,
+            secondary: secondary,
+            warn: warn,
+            textBackground: textBackground);
 
   @override
   bool updateShouldNotify(ColorsTheme oldWidget) {
@@ -27,12 +31,15 @@ class ColorsTheme extends InheritedWidget {
 }
 
 class ColorsThemeData extends Diagnosticable {
-  const ColorsThemeData({this.primary, this.secondary, this.warn})
+  const ColorsThemeData(
+      {this.primary, this.secondary, this.warn, this.textBackground})
       : assert(primary != null),
         assert(secondary != null),
-        assert(warn != null);
+        assert(warn != null),
+        assert(textBackground != null);
 
   final Color primary;
   final Color secondary;
   final Color warn;
+  final Color textBackground;
 }

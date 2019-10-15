@@ -13,15 +13,11 @@ class SlideProgressionViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(
-        vertical: DimensionsTheme.of(context).paddingM,
-    horizontal: DimensionsTheme.of(context).paddingS),
-    child: Text(
-      "${progression.current} / ${progression.total}",
-      style: Theme.of(context)
-          .textTheme
-          .display1
-          .copyWith(color: color),
-    ));
+            vertical: DimensionsTheme.of(context).paddingM,
+            horizontal: DimensionsTheme.of(context).paddingS),
+        child: Text(
+          "${progression.current} / ${progression.total}",
+          style: Theme.of(context).textTheme.display1.copyWith(color: color),
+        ));
   }
-
 }

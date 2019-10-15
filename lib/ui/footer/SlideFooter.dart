@@ -19,17 +19,20 @@ class SlideFooter extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             vertical: DimensionsTheme.of(context).paddingM,
             horizontal: DimensionsTheme.of(context).paddingXL),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text(
-            caption,
-            style: Theme.of(context)
-                .textTheme
-                .display1
-                .copyWith(color: _getColorFromTheme(theme)),
-          ),
-          SlideProgressionViewer(progression, color: _getColorFromTheme(theme))
-        ]));
+        child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                caption,
+                style: Theme.of(context)
+                    .textTheme
+                    .display1
+                    .copyWith(color: _getColorFromTheme(theme)),
+              ),
+              SlideProgressionViewer(progression,
+                  color: _getColorFromTheme(theme))
+            ]));
   }
 
   _getColorFromTheme(AmbiantTheme theme) {

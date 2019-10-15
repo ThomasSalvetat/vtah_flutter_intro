@@ -1,0 +1,9 @@
+builders:
+  ctt:
+    import: "package:code_to_text/code_to_text.dart"
+    builder_factories:
+      - simpleBuilder
+    build_extensions: {'.ctt.dart': ['.ctt.txt']}
+    build_to: source
+    auto_apply: all_packages
+    applies_builders: ["source_gen|combining_builder"]

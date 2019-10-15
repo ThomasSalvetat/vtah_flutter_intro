@@ -1,4 +1,1 @@
-enum AmbiantTheme {
-  LIGHT,
-  DARK
-}
+enum AmbiantTheme { LIGHT, DARK }

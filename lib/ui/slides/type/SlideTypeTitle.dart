@@ -1,21 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:vtah_flutter_intro/colors.dart';
 import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
+import 'package:vtah_flutter_intro/ui/empty/IfNotEmptyBuilder.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
+import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 
 class SlideTypeTitle extends StatelessWidget {
+  const SlideTypeTitle(
+      {Key key,
+      @required this.title,
+      this.subtitle,
+      @required this.progression,
+      @required this.child})
+      : super(key: key);
+
   final String title;
+  final String subtitle;
   final Widget child;
   final SlideProgression progression;
-
-  const SlideTypeTitle({@required this.title, @required this.child, @required this.progression});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: ScrollableLayout(
+      child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Flexible(
@@ -27,22 +38,38 @@ class SlideTypeTitle extends StatelessWidget {
                         horizontal: DimensionsTheme.of(context).paddingXL),
                     decoration:
                         BoxDecoration(color: ColorsTheme.of(context).primary),
-                    child: Text(title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .display2
-                            .copyWith(color: Colors.white)))),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(title,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .display2
+                                  .copyWith(color: Colors.white)),
+                          IfNotEmptyBuilder(
+                            condition: subtitle != null,
+                            builder: (context) => Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical:
+                                        DimensionsTheme.of(context).paddingM),
+                                child: Text(subtitle,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline
+                                        .copyWith(color: Colors.white))),
+                          )
+                        ]))),
             Flexible(
                 flex: 3,
+                fit: FlexFit.tight,
                 child: Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: DimensionsTheme.of(context).paddingXL, vertical: DimensionsTheme.of(context).paddingM),
-                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: DimensionsTheme.of(context).paddingXL,
+                        vertical: DimensionsTheme.of(context).paddingM),
                     child: child)),
-            SlideFooter(
-              progression
-            ),
+            SlideFooter(progression),
           ]),
-    );
+    ));
   }
 }

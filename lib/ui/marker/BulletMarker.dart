@@ -15,8 +15,7 @@ class _BulletMarkerPaint extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double height = size.height;
     double width = size.width;
-    canvas.clipRect(
-        Rect.fromLTWH(-width, 0, width * 2, height / 4),
+    canvas.clipRect(Rect.fromLTWH(-width, 0, width * 2, height / 4),
         clipOp: ClipOp.difference);
     canvas.rotate(math.pi / 4);
     canvas.drawRect(_buildRect(size), Paint()..color = this.color);
@@ -28,11 +27,8 @@ class _BulletMarkerPaint extends CustomPainter {
   @override
   bool shouldRebuildSemantics(_BulletMarkerPaint oldDelegate) => false;
 
-  static Rect _buildRect(Size size) => Rect.fromLTWH(
-      0,
-      0,
-      size.width,
-      size.height);
+  static Rect _buildRect(Size size) =>
+      Rect.fromLTWH(0, 0, size.width, size.height);
 }
 
 class BulletMarker extends StatelessWidget {
@@ -45,14 +41,15 @@ class BulletMarker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: DimensionsTheme.of(context).paddingM),
+        padding: EdgeInsets.symmetric(
+            horizontal: DimensionsTheme.of(context).paddingM),
         child: CustomPaint(
             painter: _BulletMarkerPaint(color: _getColorTheme(context, theme)),
             size: Size(size, size * 4)));
   }
 
   _getColorTheme(BuildContext context, BulletMarkerTheme theme) {
-    switch(theme) {
+    switch (theme) {
       case BulletMarkerTheme.SECONDARY:
         return ColorsTheme.of(context).secondary;
       case BulletMarkerTheme.WARN:

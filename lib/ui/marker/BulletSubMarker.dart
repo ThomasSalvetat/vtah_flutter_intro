@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
@@ -15,7 +14,8 @@ class _BulletSubMarkerPaint extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double width = size.width;
     double height = size.height;
-    canvas.drawCircle(Offset(width / 2, height / 2), width, Paint()..color = this.color);
+    canvas.drawCircle(
+        Offset(width / 2, height / 2), width, Paint()..color = this.color);
   }
 
   @override
@@ -35,14 +35,16 @@ class BulletSubMarker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: DimensionsTheme.of(context).paddingM),
+        padding: EdgeInsets.symmetric(
+            horizontal: DimensionsTheme.of(context).paddingM),
         child: CustomPaint(
-            painter: _BulletSubMarkerPaint(color: _getColorTheme(context, theme)),
+            painter:
+                _BulletSubMarkerPaint(color: _getColorTheme(context, theme)),
             size: Size(size, size * 4)));
   }
 
   _getColorTheme(BuildContext context, BulletMarkerTheme theme) {
-    switch(theme) {
+    switch (theme) {
       case BulletMarkerTheme.SECONDARY:
         return ColorsTheme.of(context).secondary;
       case BulletMarkerTheme.WARN:

@@ -1,4 +1,1 @@
-
-enum BulletMarkerTheme {
- PRIMARY, SECONDARY, WARN
-}
+enum BulletMarkerTheme { PRIMARY, SECONDARY, WARN }

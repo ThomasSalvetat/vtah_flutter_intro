@@ -4,6 +4,10 @@ import 'package:vtah_flutter_intro/modules/slides/SlidesBloc.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlidesEvent.dart';
 import 'package:vtah_flutter_intro/pages/navigation/NavigationKeyboardDetector.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage4.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage5.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage6.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage7.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage8.dart';
 import 'package:vtah_flutter_intro/ui/switcher/SlideSwitcherWidget.dart';
 
 import 'SlidesPage1.dart';
@@ -52,6 +56,14 @@ class SlidesPage extends StatelessWidget {
         return SlidesPage3();
       case Slide.PAGE4:
         return SlidesPage4();
+      case Slide.PAGE5:
+        return SlidesPage5();
+      case Slide.PAGE6:
+        return SlidesPage6();
+      case Slide.PAGE7:
+        return SlidesPage7();
+      case Slide.PAGE8:
+        return SlidesPage8();
       default:
         return null;
     }
