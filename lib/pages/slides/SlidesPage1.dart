@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/ui/slides/SlideTypeRoot.dart';
+import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeRoot.dart';
 
 class SlidesPage1 extends StatelessWidget {
   @override

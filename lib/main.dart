@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vtah_flutter_intro/colors.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlidesBloc.dart';
@@ -15,6 +16,7 @@ import 'dimensions.dart';
 void _enablePlatformOverrideForDesktop() {
   if (!kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
     debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+    debugPaintSizeEnabled = false;
   }
 }
 

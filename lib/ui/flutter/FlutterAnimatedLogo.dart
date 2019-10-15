@@ -21,7 +21,7 @@ class _FlutterAnimatedLogoState extends State<FlutterAnimatedLogo> {
     return FlareActor(
       "assets/flare/logo_flutter.flr",
       alignment: Alignment.center,
-      fit: BoxFit.fitWidth,
+      fit: BoxFit.cover,
       animation: _animationName,
     );
   }

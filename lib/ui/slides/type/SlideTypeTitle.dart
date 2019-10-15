@@ -33,10 +33,10 @@ class SlideTypeTitle extends StatelessWidget {
                             .display2
                             .copyWith(color: Colors.white)))),
             Flexible(
-                flex: 2,
+                flex: 3,
                 child: Container(
                     padding:
-                        EdgeInsets.all(DimensionsTheme.of(context).paddingXL),
+                        EdgeInsets.symmetric(horizontal: DimensionsTheme.of(context).paddingXL, vertical: DimensionsTheme.of(context).paddingM),
                     alignment: Alignment.topLeft,
                     child: child)),
             SlideFooter(

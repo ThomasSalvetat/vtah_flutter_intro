@@ -18,7 +18,7 @@ class SlideListItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-      BulletMarker(color: Colors.red),
+      BulletMarker(),
       Text(
             text,
             style: Theme.of(context).textTheme.body1.copyWith(fontSize: 20),

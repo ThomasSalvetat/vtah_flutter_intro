@@ -6,7 +6,7 @@ import 'package:vtah_flutter_intro/theme.dart';
 import 'package:vtah_flutter_intro/ui/flutter/FlutterAnimatedLogo.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
 
-import '../../dimensions.dart';
+import '../../../dimensions.dart';
 
 class SlideTypeRoot extends StatelessWidget {
   final String title;
