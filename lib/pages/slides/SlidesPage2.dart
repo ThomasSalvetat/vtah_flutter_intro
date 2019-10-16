@@ -22,7 +22,7 @@ class SlidesPage2 extends StatelessWidget {
             SlideListItem(text: "Moteur graphique open-source Skia"),
             SlideListItem(text: "Android/iOS"),
           ],
-          picture: PictureViewer(
+          fixed: PictureViewer(
               image: AssetImage('assets/images/skia.png'),
               size: Size(300, 300)),
         ),

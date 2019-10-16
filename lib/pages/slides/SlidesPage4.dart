@@ -28,7 +28,7 @@ class SlidesPage4 extends StatelessWidget {
             SlideSubListItem(
                 text: "Fuschia", theme: BulletMarkerTheme.SECONDARY),
           ],
-          picture: PictureViewer(
+          fixed: PictureViewer(
               child: FlutterAnimatedLogo(), size: Size(300, 300))),
       progression: SlideProgression(current: 4, total: 4),
     );

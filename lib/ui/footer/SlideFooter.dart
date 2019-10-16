@@ -11,7 +11,7 @@ class SlideFooter extends StatelessWidget {
   final String caption;
 
   const SlideFooter(this.progression,
-      {this.caption = "", this.theme = AmbiantTheme.LIGHT});
+      {this.caption, this.theme = AmbiantTheme.LIGHT});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SlideFooter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                caption,
+                caption ?? "",
                 style: Theme.of(context)
                     .textTheme
                     .display1

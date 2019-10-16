@@ -26,7 +26,7 @@ class SlidesPage6 extends StatelessWidget {
             SlideListItem(text: "Élement de style"),
             SlideSubListItem(text: "Font, Color")
           ],
-          picture: PictureViewer(
+          fixed: PictureViewer(
               image: AssetImage('assets/images/widgets.png'),
               size: Size(500, 500))),
       progression: SlideProgression(current: 6, total: 6),

@@ -22,9 +22,9 @@ class SlidesPage3 extends StatelessWidget {
             SlideListItem(text: "Production en mode AOT (Ahead-of-Time)"),
             SlideListItem(text: "Développement en mode JIT (Just-in-Time)")
           ],
-          picture: PictureViewer(
-              image: AssetImage('assets/images/dart.png'),
-              size: Size(300, 300))),
+          fixed: PictureViewer(
+              image: AssetImage('assets/images/dart_platform.png'),
+              size: Size(800, 300))),
       progression: SlideProgression(current: 3, total: 3),
     );
   }

@@ -4,14 +4,14 @@ import 'package:vtah_flutter_intro/colors.dart';
 
 class TwoPanelsLayer extends StatelessWidget {
   const TwoPanelsLayer(
-      {@required this.picture,
+      {@required this.fixed,
       this.alignment = Alignment.centerLeft,
       this.mainAlignment = MainAxisAlignment.center,
       this.crossAlignment = CrossAxisAlignment.start,
       @required this.children});
 
   final List<Widget> children;
-  final Widget picture;
+  final Widget fixed;
   final Alignment alignment;
   final MainAxisAlignment mainAlignment;
   final CrossAxisAlignment crossAlignment;
@@ -34,7 +34,7 @@ class TwoPanelsLayer extends StatelessWidget {
               border: Border(
                   left: BorderSide(
                       color: ColorsTheme.of(context).primary, width: 4.0))),
-          child: picture)
+          child: fixed)
     ]);
   }
 }

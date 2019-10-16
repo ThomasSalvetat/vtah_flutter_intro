@@ -3,7 +3,32 @@ import 'package:vtah_flutter_intro/ui/navigation/NavigationDirection.dart';
 
 import 'SlidesEvent.dart';
 
-enum Slide { PAGE1, PAGE2, PAGE3, PAGE4, PAGE5, PAGE6, PAGE7, PAGE8 }
+enum Slide {
+  PAGE1,
+  PAGE2,
+  PAGE3,
+  PAGE4,
+  PAGE5,
+  PAGE6,
+  PAGE7,
+  PAGE8,
+  PAGE9,
+  PAGE10,
+  PAGE11,
+  PAGE12,
+  PAGE13,
+  PAGE14,
+  PAGE15,
+  PAGE16,
+  PAGE17,
+  PAGE18,
+  PAGE19,
+  PAGE20,
+  PAGE21,
+  PAGE22,
+  PAGE23,
+  PAGE24,
+}
 
 class SlideDescription {
   final int index;

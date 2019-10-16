@@ -11,7 +11,11 @@ import '../../../dimensions.dart';
 
 class SlideTypeRoot extends StatelessWidget {
   const SlideTypeRoot(
-      {Key key, this.title, this.subtitle, this.author, this.progression})
+      {Key key,
+      @required this.title,
+      @required this.subtitle,
+      this.author,
+      @required this.progression})
       : super(key: key);
 
   final String title;

@@ -50,7 +50,7 @@ class SlidesPage8 extends StatelessWidget {
                           padding: EdgeInsets.all(
                               DimensionsTheme.of(context).paddingXL),
                           child: BirdDemo())))),
-      progression: SlideProgression(current: 7, total: 7),
+      progression: SlideProgression(current: 8, total: 8),
     );
   }
 }
