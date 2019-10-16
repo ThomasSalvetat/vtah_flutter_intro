@@ -21,7 +21,9 @@ class CCTFileBuilder extends StatelessWidget {
             ));
   }
 
-  Future<String> readCTTFile(String name) {
-    return rootBundle.loadString('assets/ctt/$name.ctt.txt');
+  Future<String> readCTTFile(String name) async {
+    String content = await rootBundle.loadString('assets/ctt/$name.ctt.txt');
+    await Future.delayed(Duration(milliseconds: 250));
+    return content;
   }
 }

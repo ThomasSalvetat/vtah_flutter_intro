@@ -27,7 +27,7 @@ class SlidesPage3 extends StatelessWidget {
           ],
           fixed: PictureViewer(
               image: AssetImage('assets/images/dart_platform.png'),
-              size: Size(800, 300))),
+              size: Size(600, 300))),
       progression: progression,
     );
   }
