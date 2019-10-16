@@ -10,6 +10,9 @@ import 'package:vtah_flutter_intro/ui/slides/layers/ThreePanelsLayer.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
 class SlidesPage22 extends StatelessWidget {
+  const SlidesPage22({Key key, @required this.progression}) : super(key: key);
+  final SlideProgression progression;
+
   @override
   Widget build(BuildContext context) {
     return SlideTypeTitle(
@@ -29,7 +32,7 @@ class SlidesPage22 extends StatelessWidget {
                       padding:
                           EdgeInsets.all(DimensionsTheme.of(context).paddingXL),
                       child: StackDemo()))),
-      progression: SlideProgression(current: 22, total: 22),
+      progression: progression,
     );
   }
 }

@@ -6,6 +6,9 @@ import 'package:vtah_flutter_intro/ui/slides/item/SlideQuoteItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
 class SlidesPage5 extends StatefulWidget {
+  const SlidesPage5({Key key, @required this.progression}) : super(key: key);
+  final SlideProgression progression;
+
   @override
   _SlidesPage5State createState() => _SlidesPage5State();
 }
@@ -25,7 +28,7 @@ class _SlidesPage5State extends State<SlidesPage5> {
                 texts: ["Everything is a widget", "Composition > inheritance"],
                 onTap: _onDebugSwitchChanged)
           ]),
-      progression: SlideProgression(current: 5, total: 5),
+      progression: widget.progression,
     );
   }
 

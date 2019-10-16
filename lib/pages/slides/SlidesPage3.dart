@@ -7,6 +7,9 @@ import 'package:vtah_flutter_intro/ui/slides/layers/TwoPanelsLayer.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
 class SlidesPage3 extends StatelessWidget {
+  const SlidesPage3({Key key, @required this.progression}) : super(key: key);
+  final SlideProgression progression;
+
   @override
   Widget build(BuildContext context) {
     return SlideTypeTitle(
@@ -25,7 +28,7 @@ class SlidesPage3 extends StatelessWidget {
           fixed: PictureViewer(
               image: AssetImage('assets/images/dart_platform.png'),
               size: Size(800, 300))),
-      progression: SlideProgression(current: 3, total: 3),
+      progression: progression,
     );
   }
 }

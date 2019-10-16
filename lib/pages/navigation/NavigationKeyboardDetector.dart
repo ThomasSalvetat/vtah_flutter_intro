@@ -6,9 +6,15 @@ class NavigationKeyboardDetector extends StatefulWidget {
   final Widget page;
   final VoidCallback onForward;
   final VoidCallback onBackward;
+  final VoidCallback onMenu;
 
   const NavigationKeyboardDetector(
-      {this.page, this.onBackward, this.onForward});
+      {Key key,
+      @required this.page,
+      @required this.onBackward,
+      @required this.onForward,
+      @required this.onMenu})
+      : super(key: key);
 
   @override
   _NavigationKeyboardDetectorState createState() =>
@@ -48,11 +54,12 @@ class _NavigationKeyboardDetectorState
 
   _onKeyPressed(BuildContext context, RawKeyEvent event) {
     num keyId = event.logicalKey.keyId;
-
     if (_isForwardPressed(keyId)) {
       widget.onForward();
     } else if (_isBackwardPressed(keyId)) {
       widget.onBackward();
+    } else if (_isMenuPressed(keyId)) {
+      widget.onMenu();
     }
   }
 
@@ -68,6 +75,15 @@ class _NavigationKeyboardDetectorState
   _isBackwardPressed(num keyId) {
     switch (keyId) {
       case 0x100070050:
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  _isMenuPressed(num keyId) {
+    switch (keyId) {
+      case 0x100070029:
         return true;
       default:
         return false;

@@ -7,7 +7,8 @@ import 'package:vtah_flutter_intro/ui/slides/layers/TwoPanelsLayer.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
 class SlidesPage2 extends StatelessWidget {
-  const SlidesPage2({Key key}) : super(key: key);
+  const SlidesPage2({Key key, @required this.progression}) : super(key: key);
+  final SlideProgression progression;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,6 @@ class SlidesPage2 extends StatelessWidget {
               image: AssetImage('assets/images/skia.png'),
               size: Size(300, 300)),
         ),
-        progression: SlideProgression(current: 2, total: 2));
+        progression: progression);
   }
 }
