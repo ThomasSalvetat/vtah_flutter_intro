@@ -43,27 +43,27 @@ class _NavigationKeyboardDetectorState
   }
 
   _onKeyPressed(BuildContext context, RawKeyEvent event) {
-    String keyName = event.physicalKey.debugName;
+    num keyId = event.logicalKey.keyId;
 
-    if (_isForwardPressed(keyName)) {
+    if (_isForwardPressed(keyId)) {
       widget.onForward();
-    } else if (_isBackwardPressed(keyName)) {
+    } else if (_isBackwardPressed(keyId)) {
       widget.onBackward();
     }
   }
 
-  _isForwardPressed(String keyName) {
-    switch (keyName) {
-      case 'Arrow Right':
+  _isForwardPressed(num keyId) {
+    switch (keyId) {
+      case 0x10007004f:
         return true;
       default:
         return false;
     }
   }
 
-  _isBackwardPressed(String keyName) {
-    switch (keyName) {
-      case 'Arrow Left':
+  _isBackwardPressed(num keyId) {
+    switch (keyId) {
+      case 0x100070050:
         return true;
       default:
         return false;

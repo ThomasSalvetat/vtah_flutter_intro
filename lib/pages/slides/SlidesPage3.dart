@@ -11,7 +11,7 @@ class SlidesPage3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTypeTitle(
       title: 'Le langage Dart',
-      child: PanelPictureLayer(
+      child: TwoPanelsLayer(
           children: <Widget>[
             SlideListItem(text: "Créé en 2011 par Google"),
             SlideListItem(text: "À l'origine, un javascript orienté objet"),

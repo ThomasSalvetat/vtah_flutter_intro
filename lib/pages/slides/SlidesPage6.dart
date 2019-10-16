@@ -14,7 +14,7 @@ class SlidesPage6 extends StatelessWidget {
     return SlideTypeTitle(
       title: 'Flutter',
       subtitle: 'Everything is a widget',
-      child: PanelPictureLayer(
+      child: TwoPanelsLayer(
           children: <Widget>[
             SlideListItem(text: "Élement de layouts"),
             SlideSubListItem(text: "Row, Column"),

@@ -14,7 +14,7 @@ class SlidesPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTypeTitle(
       title: 'Flutter',
-      child: PanelPictureLayer(
+      child: TwoPanelsLayer(
           children: <Widget>[
             SlideListItem(text: "SDK open-source créé par Google"),
             SlideListItem(text: "Version stable depuis decembre 2018"),

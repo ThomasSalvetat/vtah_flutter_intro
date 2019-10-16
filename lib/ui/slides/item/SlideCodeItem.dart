@@ -14,7 +14,6 @@ class SlideCodeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: BoxConstraints.tightFor(width: 400),
         padding: EdgeInsets.all(DimensionsTheme.of(context).paddingM),
         decoration:
             BoxDecoration(color: ColorsTheme.of(context).textBackground),
@@ -22,6 +21,7 @@ class SlideCodeItem extends StatelessWidget {
             child: HighlightView(content ?? "",
                 language: 'dart',
                 theme: darculaTheme,
+                textStyle: TextStyle(fontSize: 18),
                 padding:
                     EdgeInsets.all(DimensionsTheme.of(context).paddingM))));
   }

@@ -2,15 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/colors.dart';
 
-class PanelPictureLayer extends StatelessWidget {
-  const PanelPictureLayer(
+class TwoPanelsLayer extends StatelessWidget {
+  const TwoPanelsLayer(
       {@required this.picture,
+      this.alignment = Alignment.centerLeft,
       this.mainAlignment = MainAxisAlignment.center,
       this.crossAlignment = CrossAxisAlignment.start,
       @required this.children});
 
   final List<Widget> children;
   final Widget picture;
+  final Alignment alignment;
   final MainAxisAlignment mainAlignment;
   final CrossAxisAlignment crossAlignment;
 
@@ -19,12 +21,14 @@ class PanelPictureLayer extends StatelessWidget {
     return Row(children: [
       Expanded(
           flex: 2,
-          child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Column(
-                  mainAxisAlignment: mainAlignment,
-                  crossAxisAlignment: crossAlignment,
-                  children: children))),
+          child: Align(
+              alignment: alignment,
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Column(
+                      mainAxisAlignment: mainAlignment,
+                      crossAxisAlignment: crossAlignment,
+                      children: children)))),
       Container(
           decoration: BoxDecoration(
               border: Border(

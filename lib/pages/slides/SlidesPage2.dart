@@ -13,7 +13,7 @@ class SlidesPage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTypeTitle(
         title: 'Bref historique',
-        child: PanelPictureLayer(
+        child: TwoPanelsLayer(
           children: <Widget>[
             SlideListItem(
                 text:
