@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
-import 'package:vtah_flutter_intro/ui/slides/item/SlideHyperlinkItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
@@ -43,10 +42,6 @@ class SlidesPage41 extends StatelessWidget {
             theme: BulletMarkerTheme.WARN),
         SlideListItem(
             text: "La publicité Google Ads", theme: BulletMarkerTheme.WARN),
-        SlideHyperlinkItem(
-            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro_demo"),
-        SlideHyperlinkItem(
-            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro"),
       ]),
       progression: progression,
     );
