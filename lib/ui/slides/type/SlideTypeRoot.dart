@@ -10,17 +10,19 @@ import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 import '../../../dimensions.dart';
 
 class SlideTypeRoot extends StatelessWidget {
-  const SlideTypeRoot(
-      {Key key,
-      @required this.title,
-      @required this.subtitle,
-      this.author,
-      @required this.progression})
-      : super(key: key);
+  const SlideTypeRoot({
+    Key key,
+    @required this.title,
+    @required this.subtitle,
+    this.author,
+    @required this.progression,
+    this.child,
+  }) : super(key: key);
 
   final String title;
   final String subtitle;
   final String author;
+  final Widget child;
   final SlideProgression progression;
 
   @override
@@ -56,7 +58,9 @@ class SlideTypeRoot extends StatelessWidget {
                                   .copyWith(color: Colors.white),
                             ))
                       ])),
-              Flexible(flex: 2, child: Center(child: FlutterAnimatedLogo())),
+              Flexible(
+                  flex: 2,
+                  child: Center(child: child ?? FlutterAnimatedLogo())),
               SlideFooter(
                 progression,
                 caption: author,

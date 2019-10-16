@@ -23,7 +23,24 @@ import 'package:vtah_flutter_intro/pages/slides/SlidesPage22.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage23.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage24.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage25.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage26.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage27.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage28.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage29.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage30.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage31.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage32.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage33.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage34.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage35.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage36.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage37.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage38.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage39.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage4.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage40.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage41.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage42.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage5.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage6.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage7.dart';
@@ -36,10 +53,6 @@ import 'SlidesPage3.dart';
 import 'SlidesPage9.dart';
 
 class SlidesPage extends StatelessWidget {
-  final Widget child;
-
-  const SlidesPage({this.child});
-
   @override
   Widget build(BuildContext context) {
     final SlidesBloc slidesBloc = BlocProvider.of<SlidesBloc>(context);
@@ -134,6 +147,40 @@ class SlidesPage extends StatelessWidget {
         return SlidesPage24(progression: progression);
       case Slide.PAGE25:
         return SlidesPage25(progression: progression);
+      case Slide.PAGE26:
+        return SlidesPage26(progression: progression);
+      case Slide.PAGE27:
+        return SlidesPage27(progression: progression);
+      case Slide.PAGE28:
+        return SlidesPage28(progression: progression);
+      case Slide.PAGE29:
+        return SlidesPage29(progression: progression);
+      case Slide.PAGE30:
+        return SlidesPage30(progression: progression);
+      case Slide.PAGE31:
+        return SlidesPage31(progression: progression);
+      case Slide.PAGE32:
+        return SlidesPage32(progression: progression);
+      case Slide.PAGE33:
+        return SlidesPage33(progression: progression);
+      case Slide.PAGE34:
+        return SlidesPage34(progression: progression);
+      case Slide.PAGE35:
+        return SlidesPage35(progression: progression);
+      case Slide.PAGE36:
+        return SlidesPage36(progression: progression);
+      case Slide.PAGE37:
+        return SlidesPage37(progression: progression);
+      case Slide.PAGE38:
+        return SlidesPage38(progression: progression);
+      case Slide.PAGE39:
+        return SlidesPage39(progression: progression);
+      case Slide.PAGE40:
+        return SlidesPage40(progression: progression);
+      case Slide.PAGE41:
+        return SlidesPage41(progression: progression);
+      case Slide.PAGE42:
+        return SlidesPage42(progression: progression);
       default:
         return null;
     }

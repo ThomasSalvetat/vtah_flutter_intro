@@ -1,12 +1,12 @@
 import 'package:flare_flutter/flare_actor.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
-class FlutterAnimatedLogo extends StatefulWidget {
+class QuestionAnimated extends StatefulWidget {
   @override
-  _FlutterAnimatedLogoState createState() => _FlutterAnimatedLogoState();
+  _QuestionAnimatedState createState() => _QuestionAnimatedState();
 }
 
-class _FlutterAnimatedLogoState extends State<FlutterAnimatedLogo> {
+class _QuestionAnimatedState extends State<QuestionAnimated> {
   String _animationName;
 
   @override
@@ -20,12 +20,12 @@ class _FlutterAnimatedLogoState extends State<FlutterAnimatedLogo> {
     return Container(
         alignment: Alignment.center,
         child: FlareActor(
-          "assets/flare/logo_flutter.flr",
+          "assets/flare/question.flr",
           fit: BoxFit.fitHeight,
           animation: _animationName,
         ));
   }
 
   _toggleAnimation(bool enable) =>
-      setState(() => _animationName = enable ? "loading" : null);
+      setState(() => _animationName = enable ? "default" : null);
 }

@@ -30,6 +30,23 @@ enum Slide {
   PAGE23,
   PAGE24,
   PAGE25,
+  PAGE26,
+  PAGE27,
+  PAGE28,
+  PAGE29,
+  PAGE30,
+  PAGE31,
+  PAGE32,
+  PAGE33,
+  PAGE34,
+  PAGE35,
+  PAGE36,
+  PAGE37,
+  PAGE38,
+  PAGE39,
+  PAGE40,
+  PAGE41,
+  PAGE42,
 }
 
 class SlidesBloc extends Bloc<SlidesAction, SlideDescription> {

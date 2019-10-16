@@ -29,8 +29,7 @@ class _NavigationDialogState extends State<NavigationDialog> {
         keyboardType: TextInputType.number,
         onChanged: (value) => setState(() => _page = int.parse(value)),
         controller: _controller,
-        decoration: InputDecoration(
-            border: InputBorder.none, hintText: widget.description),
+        decoration: InputDecoration(hintText: widget.description),
       ),
       actions: <Widget>[
         FlatButton(

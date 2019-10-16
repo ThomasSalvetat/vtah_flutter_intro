@@ -5,14 +5,14 @@ import 'package:meta/meta.dart';
 import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarker.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
+import 'package:vtah_flutter_intro/ui/text/HyperlinkText.dart';
 
-class SlideListItem extends StatelessWidget {
-  const SlideListItem(
-      {Key key, @required this.text, this.theme = BulletMarkerTheme.SECONDARY})
+class SlideHyperlinkItem extends StatelessWidget {
+  const SlideHyperlinkItem({Key key, @required this.link, this.text})
       : super(key: key);
 
+  final String link;
   final String text;
-  final BulletMarkerTheme theme;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,8 @@ class SlideListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-              BulletMarker(theme: theme),
-              Text(
-                text,
-                style: Theme.of(context).textTheme.body1.copyWith(fontSize: 20),
-                overflow: TextOverflow.ellipsis,
-              )
+              BulletMarker(theme: BulletMarkerTheme.WARN),
+              HyperlinkText(url: link, text: text)
             ])));
   }
 }

@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vtah_flutter_intro/colors.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlidesBloc.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage.dart';
-import 'package:vtah_flutter_intro/pages/slides/SlidesPage1.dart';
 
 import 'dimensions.dart';
 
@@ -37,8 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       home: DimensionsTheme(
           child: BlocProvider(
-              builder: (context) => SlidesBloc(),
-              child: SlidesPage(child: SlidesPage1()))),
+              builder: (context) => SlidesBloc(), child: SlidesPage())),
     )));
   }
 }
