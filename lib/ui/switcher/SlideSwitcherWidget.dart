@@ -28,12 +28,11 @@ class _WidgetSlideSwitcherState extends State<WidgetSlideSwitcher>
       vsync: this,
       animationBehavior: AnimationBehavior.normal,
     );
+
+    _animate();
   }
 
-  @override
-  void didUpdateWidget(WidgetSlideSwitcher oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    _oldWidget = oldWidget.child;
+  _animate() {
     if (_hasChangedDependencies || _oldWidget == null) {
       _hasChangedDependencies = false;
       _controller.animateTo(1, duration: Duration.zero);
@@ -41,6 +40,13 @@ class _WidgetSlideSwitcherState extends State<WidgetSlideSwitcher>
       _controller.reset();
       _controller.animateTo(1, curve: Curves.fastOutSlowIn);
     }
+  }
+
+  @override
+  void didUpdateWidget(WidgetSlideSwitcher oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _oldWidget = oldWidget.child;
+    _animate();
   }
 
   @override

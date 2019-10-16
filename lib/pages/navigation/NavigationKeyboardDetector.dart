@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vtah_flutter_intro/pages/navigation/SwiperHorizontalDetector.dart';
 
 class NavigationKeyboardDetector extends StatefulWidget {
   final Widget page;
@@ -27,12 +28,15 @@ class _NavigationKeyboardDetectorState
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
-      onKey: (event) => _onKeyDown(context, event),
-      child: widget.page,
-      autofocus: false,
-      focusNode: _focusNode,
-    );
+    return SwipeHorizontalDetector(
+        onSwipeRight: () => widget.onForward(),
+        onSwipeLeft: () => widget.onBackward(),
+        child: RawKeyboardListener(
+          onKey: (event) => _onKeyDown(context, event),
+          child: widget.page,
+          autofocus: false,
+          focusNode: _focusNode,
+        ));
   }
 
   _onKeyDown(BuildContext context, RawKeyEvent event) {

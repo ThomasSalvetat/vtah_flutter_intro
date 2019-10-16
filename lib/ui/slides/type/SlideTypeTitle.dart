@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'package:vtah_flutter_intro/colors.dart';
 import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/ui/empty/IfNotEmptyBuilder.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
 import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 
@@ -29,37 +28,33 @@ class SlideTypeTitle extends StatelessWidget {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Flexible(
-                flex: 1,
-                child: Container(
-                    alignment: Alignment.bottomLeft,
-                    padding: EdgeInsets.symmetric(
-                        vertical: DimensionsTheme.of(context).paddingL,
-                        horizontal: DimensionsTheme.of(context).paddingXL),
-                    decoration:
-                        BoxDecoration(color: ColorsTheme.of(context).primary),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(title,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .display2
-                                  .copyWith(color: Colors.white)),
-                          IfNotEmptyBuilder(
-                            condition: subtitle != null,
-                            builder: (context) => Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical:
-                                        DimensionsTheme.of(context).paddingM),
-                                child: Text(subtitle,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline
-                                        .copyWith(color: Colors.white))),
-                          )
-                        ]))),
+            Container(
+                alignment: Alignment.bottomLeft,
+                padding: EdgeInsets.symmetric(
+                    vertical: DimensionsTheme.of(context).paddingL,
+                    horizontal: DimensionsTheme.of(context).paddingXL),
+                decoration:
+                    BoxDecoration(color: ColorsTheme.of(context).primary),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    verticalDirection: subtitle != null
+                        ? VerticalDirection.down
+                        : VerticalDirection.up,
+                    children: [
+                      Text(title,
+                          style: Theme.of(context)
+                              .textTheme
+                              .display2
+                              .copyWith(color: Colors.white)),
+                      Text(
+                        subtitle ?? "",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline
+                            .copyWith(color: Colors.white),
+                      )
+                    ])),
             Flexible(
                 flex: 3,
                 fit: FlexFit.tight,
