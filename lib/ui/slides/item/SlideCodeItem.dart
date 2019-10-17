@@ -15,11 +15,10 @@ class SlideCodeItem extends StatelessWidget {
     return Container(
         padding: EdgeInsets.all(SlideTheme.of(context).paddingM),
         decoration: BoxDecoration(color: SlideTheme.of(context).textBackground),
-        child: SingleChildScrollView(
-            child: HighlightView(content ?? "",
+        child: HighlightView(content ?? "",
                 language: 'dart',
                 theme: darculaTheme,
                 textStyle: TextStyle(fontSize: 18),
-                padding: EdgeInsets.all(SlideTheme.of(context).paddingM))));
+                padding: EdgeInsets.all(SlideTheme.of(context).paddingM)));
   }
 }
