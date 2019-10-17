@@ -19,22 +19,20 @@ class TwoPanelsLayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
+      Align(
+          alignment: alignment,
+          child: Column(
+              mainAxisAlignment: mainAlignment,
+              crossAxisAlignment: crossAlignment,
+              children: children)),
       Expanded(
-          flex: 2,
-          child: Align(
-              alignment: alignment,
-              child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Column(
-                      mainAxisAlignment: mainAlignment,
-                      crossAxisAlignment: crossAlignment,
-                      children: children)))),
-      Container(
-          decoration: BoxDecoration(
-              border: Border(
-                  left: BorderSide(
-                      color: SlideTheme.of(context).primary, width: 4.0))),
-          child: fixed)
+          child: Container(
+        decoration: BoxDecoration(
+            border: Border(
+                left: BorderSide(
+                    color: SlideTheme.of(context).primary, width: 4.0))),
+        child: fixed,
+      ))
     ]);
   }
 }

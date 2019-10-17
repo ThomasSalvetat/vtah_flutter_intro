@@ -5,7 +5,6 @@ import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/theme.dart';
 import 'package:vtah_flutter_intro/ui/flutter/FlutterAnimatedLogo.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
-import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 
 class SlideTypeRoot extends StatelessWidget {
   const SlideTypeRoot({
@@ -27,11 +26,10 @@ class SlideTypeRoot extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: SlideTheme.of(context).primary,
-        body: ScrollableLayout(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
               Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: SlideTheme.of(context).paddingXL,
@@ -64,6 +62,6 @@ class SlideTypeRoot extends StatelessWidget {
                 caption: author,
                 theme: AmbiantTheme.DARK,
               ),
-            ])));
+            ]));
   }
 }

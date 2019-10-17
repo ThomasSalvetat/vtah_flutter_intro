@@ -26,8 +26,7 @@ class SlidesPage3 extends StatelessWidget {
             SlideListItem(text: "Développement en mode JIT (Just-in-Time)")
           ],
           fixed: PictureViewer(
-              image: AssetImage('assets/images/dart_platform.png'),
-              size: Size(600, 300))),
+              image: AssetImage('assets/images/dart_platform.png'))),
       progression: progression,
     );
   }

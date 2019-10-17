@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
 import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
-import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 
 class SlideTypeTitle extends StatelessWidget {
   const SlideTypeTitle(
@@ -23,8 +22,7 @@ class SlideTypeTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ScrollableLayout(
-      child: Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
@@ -54,16 +52,19 @@ class SlideTypeTitle extends StatelessWidget {
                             .copyWith(color: Colors.white),
                       )
                     ])),
-            Flexible(
-                flex: 3,
-                fit: FlexFit.tight,
-                child: Container(
+            Expanded(
+              child: Stack(alignment: Alignment.bottomRight, children: [
+                Container(
+                    alignment: Alignment.center,
                     padding: EdgeInsets.symmetric(
                         horizontal: SlideTheme.of(context).paddingXL,
                         vertical: SlideTheme.of(context).paddingM),
-                    child: child)),
-            SlideFooter(progression),
+                    child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical, child: child)),
+                SlideFooter(progression),
+              ]),
+            )
           ]),
-    ));
+    );
   }
 }

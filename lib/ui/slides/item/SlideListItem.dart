@@ -17,19 +17,18 @@ class SlideListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(SlideTheme.of(context).paddingM),
-        child: IntrinsicHeight(
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+        padding: EdgeInsets.all(SlideTheme.of(context).paddingS),
+        child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
               BulletMarker(theme: theme),
               Text(
                 text,
                 style: Theme.of(context).textTheme.body1.copyWith(fontSize: 20),
                 overflow: TextOverflow.ellipsis,
               )
-            ])));
+            ]));
   }
 }

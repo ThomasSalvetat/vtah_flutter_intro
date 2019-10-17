@@ -7,14 +7,14 @@ class PictureViewer extends StatelessWidget {
   final Size size;
   final Widget child;
 
-  const PictureViewer({this.image, @required this.size, this.child});
+  const PictureViewer({this.image, this.size, this.child});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(SlideTheme.of(context).paddingXL),
+        padding: EdgeInsets.all(SlideTheme.of(context).paddingL),
         child: child != null
             ? Container(constraints: BoxConstraints.tight(size), child: child)
-            : Image(image: image, width: size.width, height: size.height));
+            : Image(image: image));
   }
 }
