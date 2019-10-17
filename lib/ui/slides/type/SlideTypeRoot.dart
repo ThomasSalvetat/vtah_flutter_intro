@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/colors.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/theme.dart';
 import 'package:vtah_flutter_intro/ui/flutter/FlutterAnimatedLogo.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
 import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
-
-import '../../../dimensions.dart';
 
 class SlideTypeRoot extends StatelessWidget {
   const SlideTypeRoot({
@@ -28,7 +26,7 @@ class SlideTypeRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorsTheme.of(context).primary,
+        backgroundColor: SlideTheme.of(context).primary,
         body: ScrollableLayout(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,8 +34,8 @@ class SlideTypeRoot extends StatelessWidget {
                 children: <Widget>[
               Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: DimensionsTheme.of(context).paddingXL,
-                      horizontal: DimensionsTheme.of(context).paddingXL),
+                      vertical: SlideTheme.of(context).paddingXL,
+                      horizontal: SlideTheme.of(context).paddingXL),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -49,7 +47,7 @@ class SlideTypeRoot extends StatelessWidget {
                                 .copyWith(color: Colors.white)),
                         Padding(
                             padding: EdgeInsets.symmetric(
-                                vertical: DimensionsTheme.of(context).paddingM),
+                                vertical: SlideTheme.of(context).paddingM),
                             child: Text(
                               subtitle,
                               style: Theme.of(context)

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 
 class PictureViewer extends StatelessWidget {
   final ImageProvider image;
@@ -12,7 +12,7 @@ class PictureViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(DimensionsTheme.of(context).paddingXL),
+        padding: EdgeInsets.all(SlideTheme.of(context).paddingXL),
         child: child != null
             ? Container(constraints: BoxConstraints.tight(size), child: child)
             : Image(image: image, width: size.width, height: size.height));

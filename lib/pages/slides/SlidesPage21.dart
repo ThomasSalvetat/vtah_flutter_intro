@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/examples/WrapDemoLayouts.ctt.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/file/CCTFileBuilder.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideCodeItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
@@ -38,8 +38,8 @@ class SlidesPage21 extends StatelessWidget {
                         SlideCodeItem(content: wrapDemoLayouts)
                       ],
                       fixed: Padding(
-                          padding: EdgeInsets.all(
-                              DimensionsTheme.of(context).paddingXL),
+                          padding:
+                              EdgeInsets.all(SlideTheme.of(context).paddingXL),
                           child: WrapDemoLayouts())))),
       progression: progression,
     );

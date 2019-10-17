@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/colors.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 
 class TwoPanelsLayer extends StatelessWidget {
   const TwoPanelsLayer(
@@ -33,7 +33,7 @@ class TwoPanelsLayer extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border(
                   left: BorderSide(
-                      color: ColorsTheme.of(context).primary, width: 4.0))),
+                      color: SlideTheme.of(context).primary, width: 4.0))),
           child: fixed)
     ]);
   }

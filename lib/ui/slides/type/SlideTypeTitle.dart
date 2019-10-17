@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vtah_flutter_intro/colors.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/footer/SlideFooter.dart';
 import 'package:vtah_flutter_intro/ui/layout/ScrollableLayout.dart';
 
@@ -31,10 +30,10 @@ class SlideTypeTitle extends StatelessWidget {
             Container(
                 alignment: Alignment.bottomLeft,
                 padding: EdgeInsets.symmetric(
-                    vertical: DimensionsTheme.of(context).paddingL,
-                    horizontal: DimensionsTheme.of(context).paddingXL),
+                    vertical: SlideTheme.of(context).paddingL,
+                    horizontal: SlideTheme.of(context).paddingXL),
                 decoration:
-                    BoxDecoration(color: ColorsTheme.of(context).primary),
+                    BoxDecoration(color: SlideTheme.of(context).primary),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,8 +59,8 @@ class SlideTypeTitle extends StatelessWidget {
                 fit: FlexFit.tight,
                 child: Container(
                     padding: EdgeInsets.symmetric(
-                        horizontal: DimensionsTheme.of(context).paddingXL,
-                        vertical: DimensionsTheme.of(context).paddingM),
+                        horizontal: SlideTheme.of(context).paddingXL,
+                        vertical: SlideTheme.of(context).paddingM),
                     child: child)),
             SlideFooter(progression),
           ]),

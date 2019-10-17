@@ -1,8 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/colors.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 
 class SlideQuoteItem extends StatelessWidget {
   const SlideQuoteItem({Key key, @required this.texts, this.author, this.onTap})
@@ -16,7 +15,7 @@ class SlideQuoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-            color: ColorsTheme.of(context).textBackground,
+            color: SlideTheme.of(context).textBackground,
             shape: BoxShape.rectangle,
             boxShadow: [
               BoxShadow(
@@ -25,7 +24,7 @@ class SlideQuoteItem extends StatelessWidget {
               )
             ],
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
-        padding: EdgeInsets.all(DimensionsTheme.of(context).paddingL),
+        padding: EdgeInsets.all(SlideTheme.of(context).paddingL),
         child: SizedBox(
           width: 400.0,
           child: TypewriterAnimatedTextKit(

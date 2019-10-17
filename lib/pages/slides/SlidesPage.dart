@@ -53,7 +53,12 @@ import 'SlidesPage2.dart';
 import 'SlidesPage3.dart';
 import 'SlidesPage9.dart';
 
-class SlidesPage extends StatelessWidget {
+class SlidesPage extends StatefulWidget {
+  @override
+  _SlidesPageState createState() => _SlidesPageState();
+}
+
+class _SlidesPageState extends State<SlidesPage> {
   @override
   Widget build(BuildContext context) {
     final SlidesBloc slidesBloc = BlocProvider.of<SlidesBloc>(context);

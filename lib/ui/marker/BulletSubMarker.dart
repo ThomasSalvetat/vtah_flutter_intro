@@ -1,8 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
-import 'package:vtah_flutter_intro/colors.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
+import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
 
 class _BulletSubMarkerPaint extends CustomPainter {
@@ -35,8 +34,8 @@ class BulletSubMarker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: DimensionsTheme.of(context).paddingM),
+        padding:
+            EdgeInsets.symmetric(horizontal: SlideTheme.of(context).paddingM),
         child: CustomPaint(
             painter:
                 _BulletSubMarkerPaint(color: _getColorTheme(context, theme)),
@@ -46,11 +45,11 @@ class BulletSubMarker extends StatelessWidget {
   _getColorTheme(BuildContext context, BulletMarkerTheme theme) {
     switch (theme) {
       case BulletMarkerTheme.SECONDARY:
-        return ColorsTheme.of(context).secondary;
+        return SlideTheme.of(context).secondary;
       case BulletMarkerTheme.WARN:
-        return ColorsTheme.of(context).warn;
+        return SlideTheme.of(context).warn;
       default:
-        return ColorsTheme.of(context).primary;
+        return SlideTheme.of(context).primary;
     }
   }
 }
