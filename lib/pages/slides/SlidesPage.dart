@@ -41,6 +41,7 @@ import 'package:vtah_flutter_intro/pages/slides/SlidesPage4.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage40.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage41.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage42.dart';
+import 'package:vtah_flutter_intro/pages/slides/SlidesPage43.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage5.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage6.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage7.dart';
@@ -181,6 +182,8 @@ class SlidesPage extends StatelessWidget {
         return SlidesPage41(progression: progression);
       case Slide.PAGE42:
         return SlidesPage42(progression: progression);
+      case Slide.PAGE43:
+        return SlidesPage43(progression: progression);
       default:
         return null;
     }

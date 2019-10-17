@@ -47,6 +47,7 @@ enum Slide {
   PAGE40,
   PAGE41,
   PAGE42,
+  PAGE43,
 }
 
 class SlidesBloc extends Bloc<SlidesAction, SlideDescription> {

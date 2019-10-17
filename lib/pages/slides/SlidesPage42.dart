@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/ui/question/QuestionAnimated.dart';
-import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeRoot.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideHyperlinkItem.dart';
+import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
 class SlidesPage42 extends StatelessWidget {
   const SlidesPage42({Key key, @required this.progression}) : super(key: key);
@@ -10,11 +10,15 @@ class SlidesPage42 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SlideTypeRoot(
-      title: 'Merci',
-      subtitle: 'Avez-vous des questions ?',
+    return SlideTypeTitle(
+      title: 'Liens',
+      child: Column(children: <Widget>[
+        SlideHyperlinkItem(
+            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro_demo"),
+        SlideHyperlinkItem(
+            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro"),
+      ]),
       progression: progression,
-      child: QuestionAnimated(),
     );
   }
 }

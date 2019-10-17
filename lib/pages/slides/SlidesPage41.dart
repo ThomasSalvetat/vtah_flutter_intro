@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideHyperlinkItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
 
@@ -21,8 +22,12 @@ class SlidesPage41 extends StatelessWidget {
         SlideListItem(text: "Animations"),
         SlideListItem(text: "Grand nombre de bibliothèques"),
         SlideListItem(text: "Grand nombre de plugins"),
-        SlideListItem(text: "Possibilité d'appeller du code exécutable depuis l'environnement dart grâce à dart FFI"),
-        SlideListItem(text: "Possibilité d'afficher des vues natives (AndroidView, UiKitView)"),
+        SlideListItem(
+            text:
+                "Possibilité d'appeller du code exécutable depuis l'environnement dart grâce à dart FFI"),
+        SlideListItem(
+            text:
+                "Possibilité d'afficher des vues natives (AndroidView, UiKitView)"),
         SlideListItem(text: "Bientôt le natif Fuschia ?"),
         SlideListItem(
             text: "Pas encore mature sur desktop et web",
@@ -37,8 +42,11 @@ class SlidesPage41 extends StatelessWidget {
             text: "Attention à bien surveiller l'architecture",
             theme: BulletMarkerTheme.WARN),
         SlideListItem(
-            text: "La publicité Google Ads",
-            theme: BulletMarkerTheme.WARN),
+            text: "La publicité Google Ads", theme: BulletMarkerTheme.WARN),
+        SlideHyperlinkItem(
+            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro_demo"),
+        SlideHyperlinkItem(
+            link: "https://github.com/ThomasSalvetat/vtah_flutter_intro"),
       ]),
       progression: progression,
     );
