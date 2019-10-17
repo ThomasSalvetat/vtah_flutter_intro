@@ -41,7 +41,7 @@ class SlidesPage7 extends StatelessWidget {
                             text: "lorsque le parent change sa configuration"),
                         SlideSubListItem(
                             text:
-                                "lorsque un IheritedWidget dont il dépend change"),
+                                "lorsque un InheritedWidget dont il dépend change"),
                       ],
                       side2: [
                         SlideCodeItem(content: frog),
