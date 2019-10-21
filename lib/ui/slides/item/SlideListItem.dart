@@ -15,16 +15,28 @@ class SlideListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          BulletMarker(theme: theme),
-          Expanded(
-              child: Text(
-            text,
-            style: ResponsiveThemeWidget.of(context).style.textStyle.body1,
-          ))
-        ]);
+    return Padding(
+        padding: EdgeInsets.symmetric(
+            vertical:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingS),
+        child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              BulletMarker(
+                  theme: theme,
+                  size: ResponsiveThemeWidget.of(context)
+                          .style
+                          .textStyle
+                          .body1
+                          .fontSize *
+                      2 /
+                      3),
+              Expanded(
+                  child: Text(
+                text,
+                style: ResponsiveThemeWidget.of(context).style.textStyle.body1,
+              ))
+            ]));
   }
 }

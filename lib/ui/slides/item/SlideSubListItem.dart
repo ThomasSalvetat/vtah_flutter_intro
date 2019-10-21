@@ -17,6 +17,8 @@ class SlideSubListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(
+            vertical:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingXS,
             horizontal:
                 ResponsiveThemeWidget.of(context).style.paddingStyle.paddingXL),
         child: Row(
@@ -26,13 +28,16 @@ class SlideSubListItem extends StatelessWidget {
               BulletSubMarker(
                   theme: theme,
                   size: ResponsiveThemeWidget.of(context)
-                      .style
-                      .paddingStyle
-                      .paddingS),
+                          .style
+                          .textStyle
+                          .body2
+                          .fontSize *
+                      2 /
+                      3),
               Expanded(
                   child: Text(
                 text,
-                style: ResponsiveThemeWidget.of(context).style.textStyle.body1,
+                style: ResponsiveThemeWidget.of(context).style.textStyle.body2,
               ))
             ]));
   }

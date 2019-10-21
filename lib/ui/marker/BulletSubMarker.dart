@@ -29,8 +29,7 @@ class BulletSubMarker extends StatelessWidget {
   final double size;
   final BulletMarkerTheme theme;
 
-  const BulletSubMarker(
-      {this.theme = BulletMarkerTheme.SECONDARY, this.size = 10.0});
+  const BulletSubMarker({this.theme = BulletMarkerTheme.SECONDARY, this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class BulletSubMarker extends StatelessWidget {
         child: CustomPaint(
             painter:
                 _BulletSubMarkerPaint(color: _getColorTheme(context, theme)),
-            size: Size(size, size * 4)));
+            size: Size(size / 2, size / 2)));
   }
 
   _getColorTheme(BuildContext context, BulletMarkerTheme theme) {
