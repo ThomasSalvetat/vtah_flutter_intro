@@ -15,7 +15,7 @@ class _WidgetSlideSwitcherState extends State<WidgetSlideSwitcher>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Widget _oldWidget;
-  bool _hasChangedDependencies = false;
+  bool _hasBeenReassembled = false;
 
   @override
   void initState() {
@@ -33,8 +33,8 @@ class _WidgetSlideSwitcherState extends State<WidgetSlideSwitcher>
   }
 
   _animate() {
-    if (_hasChangedDependencies || _oldWidget == null) {
-      _hasChangedDependencies = false;
+    if (_hasBeenReassembled || _oldWidget == null) {
+      _hasBeenReassembled = false;
       _controller.animateTo(1, duration: Duration.zero);
     } else if (_oldWidget != widget.child) {
       _controller.reset();
@@ -50,9 +50,9 @@ class _WidgetSlideSwitcherState extends State<WidgetSlideSwitcher>
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _hasChangedDependencies = true;
+  void reassemble() {
+    super.reassemble();
+    _hasBeenReassembled = true;
   }
 
   @override
