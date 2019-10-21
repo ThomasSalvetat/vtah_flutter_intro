@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:meta/meta.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarker.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
 import 'package:vtah_flutter_intro/ui/text/HyperlinkText.dart';
@@ -16,16 +14,13 @@ class SlideHyperlinkItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.all(DimensionsTheme.of(context).paddingM),
-        child: IntrinsicHeight(
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-              BulletMarker(theme: BulletMarkerTheme.WARN),
-              HyperlinkText(url: link, text: text)
-            ])));
+    return Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          BulletMarker(theme: BulletMarkerTheme.WARN),
+          Expanded(child: HyperlinkText(url: link, text: text))
+        ]);
   }
 }

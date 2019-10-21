@@ -15,7 +15,7 @@ class SlidesPage3 extends StatelessWidget {
     return SlideTypeTitle(
       title: 'Le langage Dart',
       child: TwoPanelsLayer(
-          children: <Widget>[
+          side1: <Widget>[
             SlideListItem(text: "Créé en 2011 par Google"),
             SlideListItem(text: "À l'origine, un javascript orienté objet"),
             SlideListItem(
@@ -25,9 +25,8 @@ class SlidesPage3 extends StatelessWidget {
             SlideListItem(text: "Production en mode AOT (Ahead-of-Time)"),
             SlideListItem(text: "Développement en mode JIT (Just-in-Time)")
           ],
-          fixed: PictureViewer(
-              image: AssetImage('assets/images/dart_platform.png'),
-              size: Size(600, 300))),
+          side2: PictureViewer(
+              image: AssetImage('assets/images/dart_platform.png'))),
       progression: progression,
     );
   }

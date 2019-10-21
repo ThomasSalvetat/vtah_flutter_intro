@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class ScrollableLayout extends StatelessWidget {
@@ -8,12 +9,8 @@ class ScrollableLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-        builder: (context, constraints) => SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: ConstrainedBox(
-                constraints: BoxConstraints(
-                    minWidth: constraints.maxWidth,
-                    minHeight: constraints.maxHeight),
-                child: IntrinsicHeight(child: child))));
+        builder: (context, constraints) => Scrollable(
+            axisDirection: AxisDirection.down,
+            viewportBuilder: (context, viewport) => child));
   }
 }

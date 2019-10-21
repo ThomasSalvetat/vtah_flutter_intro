@@ -15,17 +15,16 @@ class SlidesPage2 extends StatelessWidget {
     return SlideTypeTitle(
         title: 'Bref historique',
         child: TwoPanelsLayer(
-          children: <Widget>[
+          side1: <Widget>[
             SlideListItem(
-                text:
-                    "Première version nommée sky en 2015 lors du Dart Developer Submit"),
+              text:
+                  "Première version nommée sky en 2015 lors du Dart Developer Submit",
+            ),
             SlideListItem(text: "120fps"),
             SlideListItem(text: "Moteur graphique open-source Skia"),
             SlideListItem(text: "Android/iOS"),
           ],
-          fixed: PictureViewer(
-              image: AssetImage('assets/images/skia.png'),
-              size: Size(300, 300)),
+          side2: PictureViewer(image: AssetImage('assets/images/skia.png')),
         ),
         progression: progression);
   }

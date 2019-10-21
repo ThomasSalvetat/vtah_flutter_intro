@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/examples/ContainerDemo.ctt.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
 import 'package:vtah_flutter_intro/ui/file/CCTFileBuilder.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideCodeItem.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideDemoItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideSubListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/layers/ThreePanelsLayer.dart';
@@ -21,20 +21,14 @@ class SlidesPage13 extends StatelessWidget {
       subtitle: 'Container',
       child: CCTFileBuilder(
           name: "ContainerDemo",
-          builder: (context, containerDemo) => ThreePanelsLayer(
-                  side1: <Widget>[
-                    SlideListItem(text: "Widget combinant plusieurs aspects :"),
-                    SlideSubListItem(text: "Painting"),
-                    SlideSubListItem(text: "Positioning"),
-                    SlideSubListItem(text: "Sizing"),
-                  ],
-                  side2: [
-                    SlideCodeItem(content: containerDemo)
-                  ],
-                  fixed: Padding(
-                      padding:
-                          EdgeInsets.all(DimensionsTheme.of(context).paddingXL),
-                      child: ContainerDemo()))),
+          builder: (context, containerDemo) => ThreePanelsLayer(side1: <Widget>[
+                SlideListItem(text: "Widget combinant plusieurs aspects :"),
+                SlideSubListItem(text: "Painting"),
+                SlideSubListItem(text: "Positioning"),
+                SlideSubListItem(text: "Sizing"),
+              ], side2: [
+                SlideCodeItem(content: containerDemo)
+              ], side3: SlideDemoItem(child: ContainerDemo()))),
       progression: progression,
     );
   }

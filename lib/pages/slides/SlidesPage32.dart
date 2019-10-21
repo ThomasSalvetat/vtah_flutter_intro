@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/dimensions.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
 import 'package:vtah_flutter_intro/ui/house/PageHouse.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideDemoItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideHyperlinkItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/layers/TwoPanelsLayer.dart';
@@ -17,24 +17,17 @@ class SlidesPage32 extends StatelessWidget {
     return SlideTypeTitle(
       title: 'Animations',
       subtitle: 'Flare',
-      child: TwoPanelsLayer(
-          children: <Widget>[
-            SlideListItem(text: "Réalisé par 2Dimensions"),
-            SlideListItem(
-                text: "Moteur 2D compatible avec flutter, android et iOS"),
-            SlideListItem(text: "Outil en ligne pour éditer les animations"),
-            SlideListItem(text: "Similaire à Lottie"),
-            SlideListItem(
-                text:
-                    "Animations open-source à la manière de github (fork, ...)"),
-            SlideHyperlinkItem(link: "https://www.2dimensions.com/"),
-            SlideHyperlinkItem(link: "https://github.com/2d-inc/Flare-Flutter"),
-          ],
-          fixed: Padding(
-              padding: EdgeInsets.all(DimensionsTheme.of(context).paddingXL),
-              child: PageHouse(
-                title: "rz",
-              ))),
+      child: TwoPanelsLayer(side1: <Widget>[
+        SlideListItem(text: "Réalisé par 2Dimensions"),
+        SlideListItem(
+            text: "Moteur 2D compatible avec flutter, android et iOS"),
+        SlideListItem(text: "Outil en ligne pour éditer les animations"),
+        SlideListItem(text: "Similaire à Lottie"),
+        SlideListItem(
+            text: "Animations open-source à la manière de github (fork, ...)"),
+        SlideHyperlinkItem(link: "https://www.2dimensions.com/"),
+        SlideHyperlinkItem(link: "https://github.com/2d-inc/Flare-Flutter"),
+      ], side2: SlideDemoItem(child: PageHouse())),
       progression: progression,
     );
   }
