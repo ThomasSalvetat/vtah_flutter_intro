@@ -31,10 +31,11 @@ class _BulletMarkerPaint extends CustomPainter {
 }
 
 class BulletMarker extends StatelessWidget {
-  final double size;
+  final double fontSize;
   final BulletMarkerTheme theme;
 
-  const BulletMarker({this.theme = BulletMarkerTheme.SECONDARY, this.size});
+  const BulletMarker(
+      {this.theme = BulletMarkerTheme.SECONDARY, @required this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class BulletMarker extends StatelessWidget {
                 ResponsiveThemeWidget.of(context).style.paddingStyle.paddingM),
         child: CustomPaint(
             painter: _BulletMarkerPaint(color: _getColorTheme(context, theme)),
-            size: Size.square(size)));
+            size: Size.square(fontSize * 2 / 3)));
   }
 
   _getColorTheme(BuildContext context, BulletMarkerTheme theme) {

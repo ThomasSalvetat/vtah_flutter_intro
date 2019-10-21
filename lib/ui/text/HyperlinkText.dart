@@ -5,8 +5,9 @@ import 'package:url_launcher/url_launcher.dart';
 class HyperlinkText extends StatelessWidget {
   final String url;
   final String text;
+  final TextStyle style;
 
-  HyperlinkText({@required this.url, this.text});
+  HyperlinkText({@required this.url, this.text, this.style});
 
   _launchURL() async {
     if (await canLaunch(url)) {
@@ -21,7 +22,7 @@ class HyperlinkText extends StatelessWidget {
     return InkWell(
       child: Text(
         text ?? url,
-        style: TextStyle(decoration: TextDecoration.underline),
+        style: TextStyle(decoration: TextDecoration.underline).merge(style),
       ),
       onTap: _launchURL,
     );

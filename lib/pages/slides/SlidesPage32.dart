@@ -25,7 +25,6 @@ class SlidesPage32 extends StatelessWidget {
         SlideListItem(text: "Similaire à Lottie"),
         SlideListItem(
             text: "Animations open-source à la manière de github (fork, ...)"),
-        SlideHyperlinkItem(link: "https://www.2dimensions.com/"),
         SlideHyperlinkItem(link: "https://github.com/2d-inc/Flare-Flutter"),
       ], side2: SlideDemoItem(child: PageHouse())),
       progression: progression,

@@ -28,12 +28,10 @@ class SlideSubListItem extends StatelessWidget {
               BulletSubMarker(
                   theme: theme,
                   size: ResponsiveThemeWidget.of(context)
-                          .style
-                          .textStyle
-                          .body2
-                          .fontSize *
-                      2 /
-                      3),
+                      .style
+                      .textStyle
+                      .body2
+                      .fontSize),
               Expanded(
                   child: Text(
                 text,
