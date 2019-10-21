@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class SwipeHorizontalDetector extends StatelessWidget {
-  static const int SWIPE_DOWN_VELOCITY_STEP = 2000;
+  static const int SWIPE_DOWN_VELOCITY_STEP = 1000;
   final Widget child;
   final VoidCallback onSwipeRight;
   final VoidCallback onSwipeLeft;
