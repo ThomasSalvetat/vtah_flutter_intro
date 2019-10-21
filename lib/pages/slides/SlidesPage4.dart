@@ -17,22 +17,18 @@ class SlidesPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTypeTitle(
       title: 'Flutter',
-      child: TwoPanelsLayer(
-          children: <Widget>[
-            SlideListItem(text: "SDK open-source créé par Google"),
-            SlideListItem(text: "Version stable depuis decembre 2018"),
-            SlideListItem(text: "Applications multiplatformes"),
-            SlideSubListItem(text: "Android"),
-            SlideSubListItem(text: "iOS"),
-            SlideSubListItem(text: "Web", theme: BulletMarkerTheme.WARN),
-            SlideSubListItem(text: "MacOS", theme: BulletMarkerTheme.WARN),
-            SlideSubListItem(text: "Linux", theme: BulletMarkerTheme.WARN),
-            SlideSubListItem(text: "Windows", theme: BulletMarkerTheme.WARN),
-            SlideSubListItem(
-                text: "Fuschia", theme: BulletMarkerTheme.SECONDARY),
-          ],
-          fixed: PictureViewer(
-              child: FlutterAnimatedLogo(), size: Size(300, 300))),
+      child: TwoPanelsLayer(side1: <Widget>[
+        SlideListItem(text: "SDK open-source créé par Google"),
+        SlideListItem(text: "Version stable depuis decembre 2018"),
+        SlideListItem(text: "Applications multiplatformes"),
+        SlideSubListItem(text: "Android"),
+        SlideSubListItem(text: "iOS"),
+        SlideSubListItem(text: "Web", theme: BulletMarkerTheme.WARN),
+        SlideSubListItem(text: "MacOS", theme: BulletMarkerTheme.WARN),
+        SlideSubListItem(text: "Linux", theme: BulletMarkerTheme.WARN),
+        SlideSubListItem(text: "Windows", theme: BulletMarkerTheme.WARN),
+        SlideSubListItem(text: "Fuschia", theme: BulletMarkerTheme.SECONDARY),
+      ], side2: PictureViewer(child: FlutterAnimatedLogo())),
       progression: progression,
     );
   }

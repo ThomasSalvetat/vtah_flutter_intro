@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/examples/BananaIcon.ctt.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/file/CCTFileBuilder.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideCodeItem.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideDemoItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideSubListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/layers/ThreePanelsLayer.dart';
@@ -23,27 +23,22 @@ class SlidesPage37 extends StatelessWidget {
           name: "BananaIcon",
           builder: (context, bananaIcon) => CCTFileBuilder(
               name: "TestBananaIcon",
-              builder: (context, testBananaIcon) => ThreePanelsLayer(
-                      side1: <Widget>[
-                        SlideListItem(text: "WidgetTester"),
-                        SlideSubListItem(text: "intéraction et test"),
-                        SlideSubListItem(text: "pump() = dessiner le widget"),
-                        SlideListItem(text: "Finder"),
-                        SlideSubListItem(
-                            text: "find.byType() = sélecteur de widget"),
-                        SlideListItem(text: "Matcher"),
-                        SlideSubListItem(
-                            text:
-                                "findsOneWidget = vérifie qu'un seul widget est présent dans l'arbre")
-                      ],
-                      side2: [
-                        SlideCodeItem(content: bananaIcon),
-                        SlideCodeItem(content: testBananaIcon),
-                      ],
-                      fixed: Padding(
-                          padding:
-                              EdgeInsets.all(SlideTheme.of(context).paddingXL),
-                          child: BananaIcon())))),
+              builder: (context, testBananaIcon) =>
+                  ThreePanelsLayer(side1: <Widget>[
+                    SlideListItem(text: "WidgetTester"),
+                    SlideSubListItem(text: "intéraction et test"),
+                    SlideSubListItem(text: "pump() = dessiner le widget"),
+                    SlideListItem(text: "Finder"),
+                    SlideSubListItem(
+                        text: "find.byType() = sélecteur de widget"),
+                    SlideListItem(text: "Matcher"),
+                    SlideSubListItem(
+                        text:
+                            "findsOneWidget = vérifie qu'un seul widget est présent dans l'arbre")
+                  ], side2: [
+                    SlideCodeItem(content: bananaIcon),
+                    SlideCodeItem(content: testBananaIcon),
+                  ], side3: SlideDemoItem(child: BananaIcon())))),
       progression: progression,
     );
   }

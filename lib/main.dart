@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlidesBloc.dart';
 import 'package:vtah_flutter_intro/pages/slides/SlidesPage.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 import 'package:vtah_flutter_intro/slide.theme.dart';
 
 // Sets a platform override for desktop to avoid exceptions. See
@@ -31,8 +32,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: BlocProvider(
-              builder: (context) => SlidesBloc(), child: SlidesPage())),
+          home: ResponsiveThemeWidget(
+              child: BlocProvider(
+                  builder: (context) => SlidesBloc(), child: SlidesPage()))),
     );
   }
 }

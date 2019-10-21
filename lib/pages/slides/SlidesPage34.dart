@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/picture/PictureViewer.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideHyperlinkItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
@@ -19,7 +18,7 @@ class SlidesPage34 extends StatelessWidget {
       title: 'State management',
       subtitle: 'Bloc',
       child: TwoPanelsLayer(
-        children: <Widget>[
+        side1: <Widget>[
           SlideListItem(text: "Issu de la programmation réactive"),
           SlideSubListItem(text: "Architecturer autour des évènements"),
           SlideSubListItem(text: "Streams, Observables"),
@@ -35,11 +34,8 @@ class SlidesPage34 extends StatelessWidget {
           SlideHyperlinkItem(link: "https://pub.dev/packages/bloc"),
           SlideHyperlinkItem(link: "https://pub.dev/packages/flutter_bloc"),
         ],
-        fixed: Padding(
-            padding: EdgeInsets.all(SlideTheme.of(context).paddingM),
-            child: PictureViewer(
-                size: Size(800, 400),
-                image: AssetImage('assets/images/bloc_architecture.png'))),
+        side2: PictureViewer(
+            image: AssetImage('assets/images/bloc_architecture.png')),
       ),
       progression: progression,
     );

@@ -1,20 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 
 class PictureViewer extends StatelessWidget {
-  final ImageProvider image;
-  final Size size;
-  final Widget child;
+  const PictureViewer({Key key, this.image, this.child}) : super(key: key);
 
-  const PictureViewer({this.image, this.size, this.child});
+  final ImageProvider image;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(SlideTheme.of(context).paddingL),
-        child: child != null
-            ? Container(constraints: BoxConstraints.tight(size), child: child)
-            : Image(image: image));
+        padding: EdgeInsets.all(
+            ResponsiveThemeWidget.of(context).style.paddingStyle.paddingL),
+        child: child != null ? child : Image(image: image));
   }
 }

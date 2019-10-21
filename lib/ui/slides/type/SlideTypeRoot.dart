@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/theme.dart';
 import 'package:vtah_flutter_intro/ui/flutter/FlutterAnimatedLogo.dart';
@@ -32,24 +33,35 @@ class SlideTypeRoot extends StatelessWidget {
             children: <Widget>[
               Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: SlideTheme.of(context).paddingXL,
-                      horizontal: SlideTheme.of(context).paddingXL),
+                      vertical: ResponsiveThemeWidget.of(context)
+                          .style
+                          .paddingStyle
+                          .paddingXL,
+                      horizontal: ResponsiveThemeWidget.of(context)
+                          .style
+                          .paddingStyle
+                          .paddingXL),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(title,
-                            style: Theme.of(context)
-                                .textTheme
+                            style: ResponsiveThemeWidget.of(context)
+                                .style
+                                .textStyle
                                 .display3
                                 .copyWith(color: Colors.white)),
                         Padding(
                             padding: EdgeInsets.symmetric(
-                                vertical: SlideTheme.of(context).paddingM),
+                                vertical: ResponsiveThemeWidget.of(context)
+                                    .style
+                                    .paddingStyle
+                                    .paddingM),
                             child: Text(
                               subtitle,
-                              style: Theme.of(context)
-                                  .textTheme
+                              style: ResponsiveThemeWidget.of(context)
+                                  .style
+                                  .textStyle
                                   .display2
                                   .copyWith(color: Colors.white),
                             ))

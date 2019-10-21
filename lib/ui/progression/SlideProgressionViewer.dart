@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 
 class SlideProgressionViewer extends StatelessWidget {
   final SlideProgression progression;
@@ -13,11 +13,17 @@ class SlideProgressionViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(
-            vertical: SlideTheme.of(context).paddingM,
-            horizontal: SlideTheme.of(context).paddingS),
+            vertical:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingM,
+            horizontal:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingS),
         child: Text(
           "${progression.current} / ${progression.total}",
-          style: Theme.of(context).textTheme.display1.copyWith(color: color),
+          style: ResponsiveThemeWidget.of(context)
+              .style
+              .textStyle
+              .display1
+              .copyWith(color: color),
         ));
   }
 }

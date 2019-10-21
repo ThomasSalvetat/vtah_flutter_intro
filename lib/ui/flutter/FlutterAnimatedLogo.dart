@@ -17,11 +17,12 @@ class _FlutterAnimatedLogoState extends State<FlutterAnimatedLogo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        alignment: Alignment.center,
+    return AspectRatio(
+        aspectRatio: 1,
         child: FlareActor(
           "assets/flare/logo_flutter.flr",
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
           animation: _animationName,
         ));
   }

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vtah_flutter_intro/examples/TextDemo.ctt.dart';
 import 'package:vtah_flutter_intro/modules/slides/SlideProgression.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/file/CCTFileBuilder.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideCodeItem.dart';
+import 'package:vtah_flutter_intro/ui/slides/item/SlideDemoItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/item/SlideListItem.dart';
 import 'package:vtah_flutter_intro/ui/slides/layers/ThreePanelsLayer.dart';
 import 'package:vtah_flutter_intro/ui/slides/type/SlideTypeTitle.dart';
@@ -20,21 +20,16 @@ class SlidesPage12 extends StatelessWidget {
       subtitle: 'Text',
       child: CCTFileBuilder(
           name: "TextDemo",
-          builder: (context, textDemo) => ThreePanelsLayer(
-                  side1: <Widget>[
-                    SlideListItem(text: "Afficher du texte"),
-                    SlideListItem(
-                        text: "Utiliser textStyle pour styliser du texte"),
-                    SlideListItem(
-                        text:
-                            "Utiliser Text.rich() pour styliser du texte de façon avancée"),
-                  ],
-                  side2: [
-                    SlideCodeItem(content: textDemo)
-                  ],
-                  fixed: Padding(
-                      padding: EdgeInsets.all(SlideTheme.of(context).paddingXL),
-                      child: TextDemo()))),
+          builder: (context, textDemo) => ThreePanelsLayer(side1: <Widget>[
+                SlideListItem(text: "Afficher du texte"),
+                SlideListItem(
+                    text: "Utiliser textStyle pour styliser du texte"),
+                SlideListItem(
+                    text:
+                        "Utiliser Text.rich() pour styliser du texte de façon avancée"),
+              ], side2: [
+                SlideCodeItem(content: textDemo)
+              ], side3: SlideDemoItem(child: TextDemo()))),
       progression: progression,
     );
   }

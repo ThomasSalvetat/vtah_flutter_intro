@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 import 'package:vtah_flutter_intro/slide.theme.dart';
 
 class SlideQuoteItem extends StatelessWidget {
@@ -24,7 +25,8 @@ class SlideQuoteItem extends StatelessWidget {
               )
             ],
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
-        padding: EdgeInsets.all(SlideTheme.of(context).paddingL),
+        padding: EdgeInsets.all(
+            ResponsiveThemeWidget.of(context).style.paddingStyle.paddingL),
         child: SizedBox(
           width: 400.0,
           child: TypewriterAnimatedTextKit(

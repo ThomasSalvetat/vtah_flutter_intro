@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 import 'package:vtah_flutter_intro/slide.theme.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
 
@@ -40,8 +41,9 @@ class BulletMarker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding:
-            EdgeInsets.symmetric(horizontal: SlideTheme.of(context).paddingM),
+        padding: EdgeInsets.symmetric(
+            horizontal:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingM),
         child: CustomPaint(
             painter: _BulletMarkerPaint(color: _getColorTheme(context, theme)),
             size: Size(size, size * 4)));

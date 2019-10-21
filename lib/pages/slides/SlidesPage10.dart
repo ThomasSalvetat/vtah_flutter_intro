@@ -17,7 +17,7 @@ class SlidesPage10 extends StatelessWidget {
       title: 'Flutter',
       subtitle: 'Architecture',
       child: TwoPanelsLayer(
-          children: <Widget>[
+          side1: <Widget>[
             SlideListItem(text: "Framework"),
             SlideSubListItem(text: "Material / Cupertino"),
             SlideSubListItem(text: "Widgets"),
@@ -30,8 +30,7 @@ class SlidesPage10 extends StatelessWidget {
             SlideListItem(text: "Embedder"),
             SlideSubListItem(text: "Native Plugins"),
           ],
-          fixed: PictureViewer(
-              size: Size(800, 600),
+          side2: PictureViewer(
               image: AssetImage('assets/images/architecture.png'))),
       progression: progression,
     );

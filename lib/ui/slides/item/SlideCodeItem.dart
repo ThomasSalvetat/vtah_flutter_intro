@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/darcula.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
+import 'package:flutter_highlight/themes/ocean.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 
 class SlideCodeItem extends StatelessWidget {
   const SlideCodeItem({Key key, @required this.content}) : super(key: key);
@@ -12,13 +13,16 @@ class SlideCodeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.all(SlideTheme.of(context).paddingM),
-        decoration: BoxDecoration(color: SlideTheme.of(context).textBackground),
+    return Padding(
+        padding: EdgeInsets.all(
+            ResponsiveThemeWidget.of(context).style.paddingStyle.paddingM),
         child: HighlightView(content ?? "",
-                language: 'dart',
-                theme: darculaTheme,
-                textStyle: TextStyle(fontSize: 18),
-                padding: EdgeInsets.all(SlideTheme.of(context).paddingM)));
+            language: 'dart',
+            theme: oceanTheme,
+            textStyle: ResponsiveThemeWidget.of(context).style.textStyle.code,
+            padding: EdgeInsets.all(ResponsiveThemeWidget.of(context)
+                .style
+                .paddingStyle
+                .paddingM)));
   }
 }

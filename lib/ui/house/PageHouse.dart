@@ -7,9 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:vtah_flutter_intro/ui/house/HouseController.dart';
 
 class PageHouse extends StatefulWidget {
-  final String title;
-
-  PageHouse({this.title, Key key}) : super(key: key);
+  const PageHouse({Key key}) : super(key: key);
 
   @override
   _PageHouseState createState() => _PageHouseState();

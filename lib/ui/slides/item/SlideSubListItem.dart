@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:meta/meta.dart';
-import 'package:vtah_flutter_intro/slide.theme.dart';
+import 'package:vtah_flutter_intro/responsive.theme.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletMarkerTheme.dart';
 import 'package:vtah_flutter_intro/ui/marker/BulletSubMarker.dart';
 
@@ -16,23 +15,25 @@ class SlideSubListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        alignment: Alignment.topLeft,
+    return Padding(
         padding: EdgeInsets.symmetric(
-            vertical: SlideTheme.of(context).paddingXS,
-            horizontal: SlideTheme.of(context).paddingXL),
-        child: IntrinsicHeight(
-            child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-              BulletSubMarker(theme: theme),
-              Text(
+            horizontal:
+                ResponsiveThemeWidget.of(context).style.paddingStyle.paddingXL),
+        child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              BulletSubMarker(
+                  theme: theme,
+                  size: ResponsiveThemeWidget.of(context)
+                      .style
+                      .paddingStyle
+                      .paddingS),
+              Expanded(
+                  child: Text(
                 text,
-                style: Theme.of(context).textTheme.body1.copyWith(fontSize: 16),
-                overflow: TextOverflow.ellipsis,
-              )
-            ])));
+                style: ResponsiveThemeWidget.of(context).style.textStyle.body1,
+              ))
+            ]));
   }
 }
